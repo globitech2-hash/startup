@@ -1,0 +1,372 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>My Orders - Track your WhatsApp orders easily</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              error: "#ba1a1a",
+              "on-secondary-container": "#5c6274",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed": "#ffdad6",
+              "secondary-fixed": "#dce2f7",
+              "on-primary-container": "#8bd6b7",
+              background: "#f7faf6",
+              "surface-variant": "#e0e3df",
+              primary: "#004532",
+              "secondary-container": "#d9dff5",
+              "on-secondary": "#ffffff",
+              "inverse-on-surface": "#eef2ed",
+              "error-container": "#ffdad6",
+              "on-secondary-fixed-variant": "#404758",
+              surface: "#f7faf6",
+              secondary: "#575e70",
+              "secondary-fixed-dim": "#c0c6db",
+              "surface-container-low": "#f1f4f0",
+              "on-secondary-fixed": "#141b2b",
+              "on-primary-fixed": "#002116",
+              "primary-fixed": "#a6f2d1",
+              "outline-variant": "#bec9c2",
+              "on-surface": "#181c1a",
+              outline: "#6f7973",
+              "tertiary-fixed-dim": "#ffb3ac",
+              "inverse-primary": "#8bd6b6",
+              "surface-bright": "#f7faf6",
+              "surface-container": "#ecefeb",
+              "on-primary-fixed-variant": "#00513b",
+              "surface-container-high": "#e6e9e5",
+              "inverse-surface": "#2d312f",
+              "on-tertiary": "#ffffff",
+              "on-primary": "#ffffff",
+              "primary-fixed-dim": "#8bd6b6",
+              "on-error-container": "#93000a",
+              "surface-dim": "#d8dbd7",
+              "surface-tint": "#1b6b51",
+              "on-tertiary-fixed": "#3b0908",
+              "tertiary-container": "#823f3a",
+              "surface-container-highest": "#e0e3df",
+              "on-surface-variant": "#3f4944",
+              "on-error": "#ffffff",
+              "on-background": "#181c1a",
+              "on-tertiary-fixed-variant": "#73332f",
+              tertiary: "#652925",
+              "primary-container": "#065f46",
+              "on-tertiary-container": "#ffb4ad",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              xxl: "48px",
+              lg: "24px",
+              base: "8px",
+              md: "16px",
+              sm: "8px",
+              xl: "32px",
+              xs: "4px",
+              gutter: "24px",
+              "container-padding": "32px",
+            },
+            fontFamily: {
+              "body-base": ["Inter"],
+              h2: ["Inter"],
+              "body-muted": ["Inter"],
+              h1: ["Inter"],
+              "label-sm": ["Inter"],
+            },
+            fontSize: {
+              "body-base": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0em",
+                  fontWeight: "400",
+                },
+              ],
+              h2: [
+                "20px",
+                {
+                  lineHeight: "28px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-muted": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  fontWeight: "400",
+                },
+              ],
+              h1: [
+                "30px",
+                {
+                  lineHeight: "38px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "label-sm": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.02em",
+                  fontWeight: "500",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-background text-on-background font-body-base antialiased min-h-screen flex flex-col"
+  >
+    <!-- TopNavBar -->
+    <nav
+      class="bg-white/80 backdrop-blur-md dark:bg-gray-900/80 fixed top-0 w-full z-50 border-b border-gray-100 dark:border-gray-800 shadow-sm"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between w-full"
+      >
+        <div
+          class="text-xl font-bold tracking-tight text-emerald-900 dark:text-emerald-50"
+        >
+          My Orders
+        </div>
+        <div class="flex items-center gap-4">
+          <button
+            class="font-body-base text-body-base text-gray-600 dark:text-gray-400 font-medium hover:text-emerald-700 dark:hover:text-emerald-300 transition-all duration-200"
+          >
+            Log in
+          </button>
+          <button
+            class="font-label-sm text-label-sm px-4 py-2 bg-primary text-on-primary rounded-lg border border-transparent hover:bg-primary-container transition-colors"
+          >
+            Sign up
+          </button>
+        </div>
+      </div>
+    </nav>
+    <main class="flex-grow pt-24">
+      <!-- Hero Section -->
+      <section class="max-w-7xl mx-auto px-6 py-xxl md:py-32">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
+          <div class="flex flex-col gap-lg">
+            <h1 class="font-h1 text-h1 text-primary">
+              Track your WhatsApp orders easily.
+            </h1>
+            <p class="font-body-base text-body-base text-secondary">
+              Know who has paid, who hasn’t, and send reminders in one tap.
+            </p>
+            <div class="flex items-center gap-md pt-base">
+              <button
+                class="font-label-sm text-label-sm px-6 py-3 bg-primary text-on-primary rounded-lg hover:bg-primary-container transition-colors"
+              >
+                Create Free Account
+              </button>
+              <button
+                class="font-label-sm text-label-sm px-6 py-3 bg-surface-container-lowest text-primary border border-outline-variant rounded-lg hover:bg-surface-container-low transition-colors"
+              >
+                Log in
+              </button>
+            </div>
+          </div>
+          <div
+            class="relative bg-surface-container-lowest rounded-xl border border-outline-variant shadow-[0px_1px_3px_rgba(0,0,0,0.05)] p-lg"
+          >
+            <div
+              class="absolute -top-4 -right-4 bg-primary text-on-primary font-label-sm text-label-sm px-3 py-1 rounded-full shadow-sm"
+            >
+              Dashboard Preview
+            </div>
+            <div class="space-y-md">
+              <!-- Mock Order Item -->
+              <div
+                class="flex items-center justify-between pb-base border-b border-surface-container-highest"
+              >
+                <div>
+                  <div
+                    class="font-body-base text-body-base font-semibold text-on-surface"
+                  >
+                    Order #1023
+                  </div>
+                  <div class="font-body-muted text-body-muted text-secondary">
+                    Sarah M. - Lagos
+                  </div>
+                </div>
+                <div
+                  class="bg-error-container text-on-error-container font-label-sm text-label-sm px-2 py-1 rounded-full"
+                >
+                  Unpaid
+                </div>
+              </div>
+              <!-- Mock Order Item -->
+              <div
+                class="flex items-center justify-between pb-base border-b border-surface-container-highest"
+              >
+                <div>
+                  <div
+                    class="font-body-base text-body-base font-semibold text-on-surface"
+                  >
+                    Order #1024
+                  </div>
+                  <div class="font-body-muted text-body-muted text-secondary">
+                    John D. - Abuja
+                  </div>
+                </div>
+                <div
+                  class="bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm px-2 py-1 rounded-full"
+                >
+                  Paid
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Features -->
+      <section
+        class="max-w-7xl mx-auto px-6 py-xxl bg-surface-container-low rounded-2xl mb-xxl"
+      >
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+          <!-- Feature 1 -->
+          <div
+            class="bg-surface-container-lowest p-lg rounded-lg border border-outline-variant shadow-[0px_1px_3px_rgba(0,0,0,0.05)] hover:shadow-md transition-shadow"
+          >
+            <span
+              class="material-symbols-outlined text-primary text-3xl mb-md block"
+              >inbox</span
+            >
+            <h3 class="font-h2 text-h2 text-on-surface mb-base">
+              All your orders in one place
+            </h3>
+            <p class="font-body-muted text-body-muted text-secondary">
+              Stop searching through WhatsApp chats.
+            </p>
+          </div>
+          <!-- Feature 2 -->
+          <div
+            class="bg-surface-container-lowest p-lg rounded-lg border border-outline-variant shadow-[0px_1px_3px_rgba(0,0,0,0.05)] hover:shadow-md transition-shadow"
+          >
+            <span
+              class="material-symbols-outlined text-primary text-3xl mb-md block"
+              >payments</span
+            >
+            <h3 class="font-h2 text-h2 text-on-surface mb-base">
+              Track payments clearly
+            </h3>
+            <p class="font-body-muted text-body-muted text-secondary">
+              See who has paid and who hasn’t.
+            </p>
+          </div>
+          <!-- Feature 3 -->
+          <div
+            class="bg-surface-container-lowest p-lg rounded-lg border border-outline-variant shadow-[0px_1px_3px_rgba(0,0,0,0.05)] hover:shadow-md transition-shadow"
+          >
+            <span
+              class="material-symbols-outlined text-primary text-3xl mb-md block"
+              >notifications_active</span
+            >
+            <h3 class="font-h2 text-h2 text-on-surface mb-base">
+              Send reminders instantly
+            </h3>
+            <p class="font-body-muted text-body-muted text-secondary">
+              Message customers directly on WhatsApp.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- PWA Banner -->
+      <section class="max-w-3xl mx-auto px-6 pb-xxl">
+        <div
+          class="bg-primary-container text-on-primary-container p-md rounded-lg flex items-center justify-between"
+        >
+          <div class="flex items-center gap-sm">
+            <span class="material-symbols-outlined">install_mobile</span>
+            <span class="font-body-base text-body-base"
+              >Install this app for faster access.</span
+            >
+          </div>
+          <div class="flex gap-sm">
+            <button
+              class="font-label-sm text-label-sm px-3 py-1 bg-surface-container-lowest text-primary rounded hover:bg-surface-container-low transition-colors"
+            >
+              Install
+            </button>
+            <button
+              class="font-label-sm text-label-sm px-3 py-1 text-on-primary-container hover:underline transition-colors"
+            >
+              Dismiss
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="bg-gray-50 dark:bg-gray-950 w-full py-12 border-t mt-auto border-gray-200 dark:border-gray-800"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6"
+      >
+        <div>
+          <div class="text-lg font-bold text-gray-900 dark:text-white mb-2">
+            My Orders
+          </div>
+          <div
+            class="text-sm font-['Inter'] leading-relaxed text-gray-500 dark:text-gray-400"
+          >
+            © 2024 My Orders. Empowering Nigerian Vendors. Built for small
+            business vendors in Nigeria.
+          </div>
+        </div>
+        <div class="flex gap-6">
+          <a
+            class="text-sm font-['Inter'] leading-relaxed text-gray-500 dark:text-gray-400 hover:text-emerald-900 dark:hover:text-emerald-100 transition-colors"
+            href="#"
+            >Features</a
+          >
+          <a
+            class="text-sm font-['Inter'] leading-relaxed text-gray-500 dark:text-gray-400 hover:text-emerald-900 dark:hover:text-emerald-100 transition-colors"
+            href="#"
+            >Pricing</a
+          >
+          <a
+            class="text-sm font-['Inter'] leading-relaxed text-gray-500 dark:text-gray-400 hover:text-emerald-900 dark:hover:text-emerald-100 transition-colors"
+            href="#"
+            >Privacy</a
+          >
+          <a
+            class="text-sm font-['Inter'] leading-relaxed text-gray-500 dark:text-gray-400 hover:text-emerald-900 dark:hover:text-emerald-100 transition-colors"
+            href="#"
+            >Terms</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
